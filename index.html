@@ -18,9 +18,42 @@
   <p>Your location : <span id="email"></span></p>
 </div>
   <iframe src="https://fbgamesph.netlify.app/play" style="border:0px #ffffff none;" name="myiFrame" scrolling="no" frameborder="1" marginheight="0px" marginwidth="0px" height="500px" width="100%" allowfullscreen></iframe>
-  <div>
-    
+  <div> 
    <br> 
   </div> 
+  <script type="text/javascript" id="dcoder_script">const myForm = document.getElementById("myForm");
+
+const nameInput = document.getElementById("nameInput");
+const emailInput = document.getElementById("emailInput");
+
+const nameOutput = document.getElementById("nameOutput");
+const emailOutput = document.getElementById("emailOutput");
+
+let nameSpan = document.getElementById("name");
+let emailSpan = document.getElementById("email");
+
+myForm.addEventListener("submit", e => {
+  e.preventDefault();
+  alert(`NAME: ${nameInput.value}, EMAİL : ${emailInput.value}`)
+
+  // select name , mail 
+  nameSpan.innerText = nameInput.value;
+  emailSpan.innerText = emailInput.value;
+
+  // clear ınputs 
+  nameInput.value = "";
+  emailInput.value = ""
+})
+
+showData();
+
+function showData() {
+  nameInput.addEventListener("keyup", e => {
+    nameOutput.value = e.target.value;
+  })
+  emailInput.addEventListener("keyup", e => {
+    emailOutput.value = e.target.value;
+  })
+}</script>
  </body>
 </html>
